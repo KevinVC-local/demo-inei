@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Integral CF';
+    src:
+      url('./assets/fonts/IntegralCF-Bold.woff2') format('woff2'),
+      url('./assets/fonts/IntegralCF-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 210 40% 96%;
+        --card-foreground: 240 0% 0%;
+        --primary: 204 98% 48%;
+        --primary-foreground: 0 0% 100%;
+        --muted: 213 27% 84%;
+        --muted-foreground: 215 16% 47%;
+        --destructive: 350 100% 40%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 214 32% 91%;
+    }
+
+    .dark {
+        --background: 0 0% 11.9%;
+        --foreground: 0 0% 95%;
+        --card: 0 0% 7%;
+        --card-foreground: 0 0% 14.9%;
+        --primary: 204 98% 48%;
+        --primary-foreground: 0 0% 100%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --destructive: 350 100% 40%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 30.9%;
+    }
+
+    :root[data-theme="blue"] {
+        --primary: 204 98% 48%;
+    }
+
+    .dark[data-theme="blue"] {
+        --background: 0 0% 11.9%;
+        --foreground: 0 0% 95%;
+        --card: 0 0% 7%;
+        --card-foreground: 0 0% 14.9%;
+        --primary: 204 98% 48%;
+        --primary-foreground: 0 0% 100%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --destructive: 350 100% 40%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 30.9%;
+    }
+
+    [type="text"],
+    [type="email"],
+    [type="url"],
+    [type="password"],
+    [type="number"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="search"],
+    [type="tel"],
+    [type="time"],
+    [type="week"],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full rounded-md border border-border bg-background px-3 py-3 text-base text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none focus:ring-primary;
+    }
+
+    button{ 
+        outline: none;
+    }
+}
+
+/** Scroll bar **/
+@supports selector(::-webkit-scrollbar) {
+    .supports-scrollbars\: pr-2 {
+        padding-right: 0.5rem;
+    }
+}
+
+.is__invalid-input {
+    label {
+        color: #e11d48 !important;
+    }
+    input {
+        border-color: #e11d48 !important;
+    }
+}
+
+.is__invalid-error {
+    color: #e11d48 !important;
+    @apply px-1 pt-1 text-xs;
+}
+
+.one_line_text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.input_number {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Para Firefox */
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+}
+
+.me-image{
+    mask-image: linear-gradient(black 80%, transparent);
+}
