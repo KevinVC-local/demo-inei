@@ -1,4 +1,4 @@
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { ButtonComponent } from '../../../common/components/button/button.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
@@ -6,7 +6,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [NgIf, NgClass, ButtonComponent, AngularSvgIconModule, NgForOf],
+  imports: [NgIf, NgClass, ButtonComponent, AngularSvgIconModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.scss'
 })

@@ -1,1 +1,47 @@
-<p>experience works!</p>
+<section class="max-w-screen-xl bg-background flex flex-col md:w-5/6 w-full m-auto h-screen">
+    <div class="h-16 justify-center items-center flex mb-3">
+      <p class="font-integralCF text-center text-2xl py-4">Experience</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 p-3">
+      @for (item of experiences(); track item.id; let  i = $index) {
+        @if(i % 2 === 0){
+          <div></div>
+        }
+        <div 
+        [ngClass]="{ 
+          'md:-translate-x-5':  i % 2 === 0, 
+          'md:translate-x-5':  i % 2 !== 0,
+          'md:justify-end md:items-end':  i % 2 !== 0}"
+        class="flex flex-col mb-2">
+          <button type="button" class="flex items-center p-3"
+          (click)="item.show = !item.show">
+            @if(i % 2 !== 0){
+              <i class="fa-solid fa-calendar-days md:hidden block mr-2"></i>
+            }
+            @if(i % 2 === 0){
+              <i class="fa-solid fa-calendar-days"></i>
+            }
+            <p class="text-sm text-foreground"
+            [ngClass]="{ 'ml-2':  i % 2 === 0, 'mr-2':  i % 2 !== 0 }">NTT DATA 123-12312-1231</p>
+            @if(i % 2 !== 0){
+              <i class="fa-solid fa-calendar-days md:block hidden"></i>
+            }
+          </button>
+          <section class="max-h-0 overflow-hidden transition-all duration-1000"
+          [ngClass]="{ hidden: !item.show, 'max-h-screen': item.expanded }">
+            <div class="border-dashed border-border mt-2"
+            [ngClass]="{ '!border-l !ml-5':  i % 2 === 0, 'border-r-0 mr-0 ml-5 md:ml-0 border-l md:border-r md:mr-5':  i % 2 !== 0 }">
+              <div
+              [ngClass]="{ 'ml-2':  i % 2 === 0, 'mr-2 text-end':  i % 2 !== 0 }">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, maxime mollitia amet maiores minima dignissimos vel, accusamus pariatur earum quia sequi. Vero molestias expedita, aspernatur labore totam commodi sequi quidem.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        @if(i % 2 !== 0){
+          <div></div>
+        }
+      }
+    </div>
+
+</section>
