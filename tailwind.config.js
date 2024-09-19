@@ -3,6 +3,8 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  darkMode: 'class',
+  mode: 'jit',
   theme: {
     extend: {
       keyframes: {

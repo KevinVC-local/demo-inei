@@ -7,13 +7,13 @@ type ButtonProps = {
   error: boolean;
   placeholder: string;
   name: string;
-  type: 'email' | 'text';
+  type: 'email' | 'text' | 'number';
 };
 
 @Component({
   selector: 'app-custom-input',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, FormsModule],
   templateUrl: './custom-input.component.html',
   styleUrl: './custom-input.component.scss',
   providers: [

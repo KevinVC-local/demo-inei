@@ -21,7 +21,6 @@ export class ExperienceComponent {
       technologies: ['Angular', 'Spring Boot', 'Java', 'TypeScript', 'HTML', 'CSS', 'JavaScript'],
       logo: 'assets/images/ntt-data-logo.png',
       show: true,
-      expanded: true
     },
     {
       id: 3435,
@@ -32,7 +31,6 @@ export class ExperienceComponent {
       technologies: ['Angular', 'Spring Boot', 'Java', 'TypeScript', 'HTML', 'CSS', 'JavaScript'],
       logo: 'assets/images/infosys-logo.png',
       show: false,
-      expanded: true
     },
     {
       id: 234,
@@ -43,7 +41,6 @@ export class ExperienceComponent {
       technologies: ['Angular', 'Spring Boot', 'Java', 'TypeScript', 'HTML', 'CSS', 'JavaScript'],
       logo: 'assets/images/tcs-logo.png',
       show: false,
-      expanded: true
     }
   ])
 
@@ -58,5 +55,4 @@ interface Experience {
   technologies: string[];
   logo: string;
   show: boolean;
-  expanded: boolean
 }

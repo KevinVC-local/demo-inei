@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-gray-900 h-16 max-w-screen-xl m-auto sticky top-0 z-50">
+<nav class="bg-white border-gray-200 dark:bg-gray-900 h-16 m-auto sticky top-0 z-[999]">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-center mx-auto p-4">
       <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse md:hidden">
           <span class="self-center text-2xl font-semibold whitespace-nowrap text-foreground font-integralCF">KVC</span>
@@ -33,7 +33,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
 <div class="max-w-screen-xl bg-background flex flex-col items-center md:w-5/6 w-full m-auto">
     <div class="h-calc flex justify-center items-center">
         <section class="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
@@ -51,7 +51,7 @@
                     <p class="capitalize ml-2">{{ item() }}</p>
                 </button>
             </div>
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center order-2 md:order-1">
                 <div class="md:4/6 w-5/6 flex flex-col">
                     <p class="font-bold text-base">👋 Hi, I am <span class="text-tdpPrimary">Kevin Venegas</span></p>
                     <p class="font-integralCF titleNav my-3">Frontend Developer</p>
@@ -62,8 +62,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-center mt-3 md:mt-0 relative translate-y-10 md:translate-y-">
-                <div class="max-w-72 relative">
+            <div class="flex justify-center items-center mt-3 md:mt-0 relative scale-75 md:scale-100 order-1">
+                <div class="max-w-56 relative">
                     <img class="w-auto max-h-72" src="assets/images/me-multicircle.png" alt="foto-profile">
                     <div class="w-10 h-10 absolute flex justify-center items-center left-[32%] top-[55%]">
                         <svg-icon src="assets/icons/typescript.svg" [svgClass]="'h-6 w-6'"></svg-icon>
