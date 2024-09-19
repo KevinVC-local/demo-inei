@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
 import { CustomInputComponent } from "../../../common/components/custom-input/custom-input.component";
 import { ButtonComponent } from "../../../common/components/button/button.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -14,6 +14,29 @@ export class ContactMeComponent implements OnInit {
 
   contactForm: FormGroup;
   private readonly formBuilder = inject(FormBuilder);
+  public listNavItems = signal<NavItem[]>([
+    {
+      id: 'home-1',
+      name: 'Home',
+      href: 'home',
+    },
+    {
+      id: 'skills-1',
+      name: 'Skills',
+      href: 'skills',
+    },
+    {
+      id: 'projects-1',
+      name: 'Projects',
+      href: 'projects',
+    },
+    {
+      id: 'experience-1',
+      name: 'Experience',
+      href: 'experience',
+    },
+  ]);
+  @Output() selectItemNav = new EventEmitter();
 
   constructor(){
     this.contactForm = this.formBuilder.group({});
@@ -21,6 +44,10 @@ export class ContactMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.initContactForm();
+  }
+
+  handleSelectItem(item: NavItem){
+    this.selectItemNav.emit(item.href);
   }
 
   initContactForm(){
@@ -34,4 +61,10 @@ export class ContactMeComponent implements OnInit {
   }
 
 
+}
+
+interface NavItem {
+  id: string;
+  name: string;
+  href: string;
 }

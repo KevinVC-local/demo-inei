@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, signal, Output, EventEmitter } from '@angular/core';
 import { ButtonComponent } from '../../../common/components/button/button.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
@@ -18,41 +18,53 @@ export class IndexComponent {
     {
       id: 'home-1',
       name: 'Home',
-      href: '#',
+      href: 'home',
       active: true
     },
     {
       id: 'skills-1',
       name: 'Skills',
-      href: '',
+      href: 'skills',
       active: false,
     },
     {
       id: 'projects-1',
       name: 'Projects',
-      href: '',
+      href: 'projects',
       active: false
     },
     {
       id: 'experience-1',
       name: 'Experience',
-      href: '',
+      href: 'experience',
       active: false
     },
     {
       id: 'contact-1',
       name: 'Contact',
-      href: '',
+      href: 'contact',
       active: false
     }
-  ])
+  ]);
+  @Output() selectItemNav = new EventEmitter();
 
   toggleThemeMode(){}
   onButtonClick(){}
+
+  handleSelectItem(item: NavItem){
+    this.selectItemNav.emit(item.href);
+  }
 
 
 handleToggleMenu(){
   this.openMenu.set(!this.openMenu());
 }
 
+}
+
+interface NavItem {
+  id: string;
+  name: string;
+  href: string;
+  active: boolean;
 }

@@ -26,6 +26,7 @@
             @for (item of listNavItems(); track item.id) {
                 <li class="flex justify-center items-center">
                     <a href="#" 
+                    (click)="handleSelectItem(item)"
                     [class.text-blue-700]="item.active"
                     class="block py-2 px-3 text-foreground rounded md:bg-transparent md:p-0 text-center" aria-current="page">{{item.name}}</a>
                   </li>
