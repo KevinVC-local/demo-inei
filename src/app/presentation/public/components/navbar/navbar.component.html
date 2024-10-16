@@ -1,0 +1,33 @@
+
+<nav class="bg-black/60 h-20 absolute top-0 z-50 sticky-navbar w-full" #navBar>
+    <div class="h-full w-full md:px-0 md:w-[95%] m-auto px-4">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto h-full">
+          <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse h-full">
+            <img src="images/logo-company.png" class="h-10 w-auto" alt="icon-company"/>
+          </a>
+          <div class="inline-flex items-center justify-center md:hidden h-12 w-12 transition-all duration-300 ease-linear">
+              <button
+              (click)="handleToggleMenu()" #burgerMenu type="button" class="bg-gradient flex outline-none btn-search h-10 w-10 rounded-full items-center justify-center text-lg text-white">
+                  <span class="sr-only">openMenu</span>
+                  <i class="fa-solid fa-bars"></i>
+              </button>
+          </div>
+          
+          <div class="hidden w-full h-full md:flex md:w-auto z-10 items-center" id="navbar-default">
+            <ul class="font-medium flex flex-col items-center py-2 md:py-0 justify-center p-0 md:p-4 md:flex-row gap-3 md:gap-4 rtl:space-x-reverse md:mt-0 md:border-0 transition-all duration-300 ease-linear" #navLinks>
+                @for (item of listNavItems(); track item.id) {
+                    <li class="flex justify-center items-center">
+                        <a routerLink="{{item.url}}" routerLinkActive="text-blue-700" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="link-active"
+                        class="relative rounded-xl bg-gradient-to-r from-[rgba(63,200,190,1)] to-[rgba(0,155,250,1)] p-[2px]" aria-current="page">
+                        <div class="bg-white rounded-xl text-base bg-link before_element">
+                            <p class="px-4 hover-circle hover:text-white hover:relative hover:z-[1]">{{item.name}}</p>
+                        </div>    
+                        </a>
+                      </li>
+                }
+            </ul>
+          </div>
+         
+        </div>
+    </div>
+</nav>

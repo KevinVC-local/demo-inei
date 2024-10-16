@@ -55,7 +55,6 @@ const tweenScale = (
       const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor)
       const scale = numberWithinRange(tweenValue, 0, 1).toString()
       const tweenNode = tweenNodes[slideIndex]
-      console.log(tweenNode);
       tweenNode.style.transform = `scale(${scale})`
     })
   })

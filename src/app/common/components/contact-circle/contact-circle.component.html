@@ -1,0 +1,16 @@
+<div class="fixed bottom-10 right-[10%] md:right-[6%] z-10 text-gray-400 hidden sm:block" #contactCircle>
+    <div class="relative w-32 h-32 flex items-center justify-center">
+        <!-- Imagen central -->
+         <button type="button" class="h-16 w-16 rounded-full text-3xl flex justify-center items-center
+         ">
+             <i class="fa-solid fa-comments"></i>
+         </button>
+      
+        <!-- Texto giratorio -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="spin-animation scale-110">
+            <svg-icon src="svgs/contact-me.svg" [svgClass]="'h-20 w-20 hover-circle'"></svg-icon>
+          </div>
+        </div>
+      </div>
+</div>

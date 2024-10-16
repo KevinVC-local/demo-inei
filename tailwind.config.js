@@ -52,6 +52,10 @@ module.exports = {
             transform: 'translateY(10px)',
           },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
@@ -59,13 +63,16 @@ module.exports = {
         'fade-out-down': 'fade-out-down 0.3s ease-out',
         'fade-in-up': 'fade-in-up 0.3s ease-out',
         'fade-out-up': 'fade-out-up 0.3s ease-out',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
       boxShadow: {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',
       },
       colors: {
-        tdpPrimary: '#0072bc',
-        tdpSecondary: '#070e27',
+        inelPrimary: '#009bfa',
+        inelSecondary: '#3fc8be',
+        gradiendPrimary: 'linear-gradient(90deg, rgba(0,155,250,1) 0%, rgba(63,200,190,1) 100%)',
+        gradiendReverse: 'linear-gradient(90deg, rgba(63,200,190,1) 0%,  rgba(0,155,250,1) 100%)',
         border: 'hsl(var(--border))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

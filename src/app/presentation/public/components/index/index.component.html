@@ -1,0 +1,81 @@
+<div class="flex-grow flex items-center justify-center h-screen relative before:z-0 before:w-full before:h-full before:bg-black before:top-0 before:left-0 before:absolute">
+  @for (item of listVideo(); track $index) {
+    <video loop muted autoplay [class.active]="item.active" class="video-slide absolute z-0 w-full h-full top-0 left-0 object-cover object-center">
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+        <track src="descriptions_en.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+        <source [src]="item.url" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+  }
+    <div class="h-[50vh] z-10 flex justify-between items-center flex-col md:flex-row w-full md:w-5/6 md:p-0 p-4">
+      <div class="flex flex-row md:flex-col gap-4 order-1 md:-order-10">
+        <button class="w-6 h-6 rounded-full bg-gradient animate-bounce" (click)="handleActiveVideo(0)"></button>
+        <button class="w-6 h-6 rounded-full bg-gradient animate-bounce" (click)="handleActiveVideo(1)"></button>
+      </div>
+        <div class="flex flex-col justify-between">
+            <h1 class="titleNav text-white font-black text-end animate__animated animate__fadeInUp">CONOCIMIENTO <br> EN
+                <span class="bg-gradient-to-r from-[rgba(63,200,190,1)] to-[rgba(0,155,250,1)] inline-block text-transparent bg-clip-text">ACCIÓN</span>
+            </h1>
+            <div class="flex gap-4 items-end justify-end mt-4">
+                <div class="flex flex-col items-center justify-center text-white ">
+                    <video
+                    class="w-16 h-16"
+                    autoplay
+                    muted
+                  >
+                    <track src="subtitles_example_en.vtt" kind="subtitles" srclang="en" label="English">
+                    <track src="descriptions_example_en.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                    <source src="videos/student.webm?v=1.0" type="video/webm">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="flex flex-col justify-center items-center">
+                    <app-counter-number [targetNumber]="50000"></app-counter-number>
+                    <p class="text-lg font-bold animate__animated animate__fadeInUp">estudiantes</p>
+                  </div>
+
+                </div>
+                <div class="flex flex-col items-center justify-center text-white">
+                    <video
+                    class="w-16 h-16"
+                    autoplay
+                    muted
+                  >
+                    <track src="videos/certification.webm" kind="subtitles" srclang="en" label="English">
+                    <track src="videos/certification.webm" kind="descriptions" srclang="en" label="English Descriptions">
+                    <source src="videos/certification.webm?v=1.0" type="video/webm">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="flex flex-col justify-center items-center">
+                    <app-counter-number [targetNumber]="250000"></app-counter-number>
+                    <p class="text-lg font-bold animate__animated animate__fadeInUp">certificados</p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center justify-center text-white">
+                    <video
+                    class="w-16 h-16"
+                    autoplay
+                    muted
+                  >
+                    <track src="subtitles_example_en.vtt" kind="subtitles" srclang="en" label="English">
+                    <track src="descriptions_example_en.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                    <source src="videos/star.webm?v=1.0" type="video/webm">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div class="flex flex-col justify-center items-center">
+                    <p class="text-lg sm:text-3xl font-extrabold">{{ currentRating().toFixed(1) }} /10</p>
+                    <p class="text-lg font-bold animate__animated animate__fadeInUp">calificación</p>
+                  </div>
+                </div>
+            </div>
+            <div class="flex justify-end mt-4">
+                <button class="text-lg border border-border text-white font-bold rounded-xl w-44 transition-all duration-800 ease-linear hover:scale-110">
+                  <div class="flex justify-center items-center">
+                    <i class="fa-solid fa-chevron-left mr-3 text-base"></i>
+                    <p>Descrubre más</p>
+                  </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

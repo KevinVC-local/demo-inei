@@ -1,5 +1,5 @@
-<div class="flex h-screen w-full overflow-hidden">
-  <section class="scrollbar-thumb-rounded scrollbar-track-rounded grow overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted">
-      <router-outlet></router-outlet>
-  </section>
-</div>
+@if (isLoading()) {
+    <app-loader-page></app-loader-page>
+} 
+<router-outlet></router-outlet>
+

@@ -1,0 +1,55 @@
+<section class="max-w-screen-xl flex justify-center items-center flex-col md:w-5/6 w-full m-auto p-4 my-4 md:h-screen">
+    <div class="flex justify-center items-center font-extrabold mb-4">
+        <p class="text-inelPrimary text-3xl animated-embla">Nuestros alumnos nos recomiendan</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 mt-4 gap-3">
+        <div class="flex flex-col justify-center items-center md:items-start col-span-2 lg:col-span-3 overflow-x-hidden text-animated-on">
+            <div class="max-w-[36rem] relative m-5 sm:m-0">
+                <video class="h-auto object-cover object-center" #videoPlayer>
+                    <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+                    <track src="descriptions_en.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                    <source src="videos/index.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+                <div class="text-inelPrimary text-8xl absolute bottom-0 right-0 rotate-12 translate-x-6 translate-y-6">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                @if (!changeClick()) {
+                    <button (click)="playVideo()" class="absolute text-gray-500/60 left-1/2 top-1/2 -translate-x-4 -translate-y-4 text-5xl">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                }
+            </div>
+            <div class="flex justify-start items-center mt-4">
+                <div class="flex flex-col">
+                    <p class="text-inelPrimary text-base font-bold">Jack Pacheco Noriega</p>
+                    <p class="text-foreground text-xs">Llevé el Programa de Especialización en Sistemas Eléctricos de Potencia en INEL y gracias a ello, hoy por hoy estoy trabajando en Ambit Energy - Texas</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col col-span-2 gap-4 text-animated-on">
+            @for (item of [1,1,1]; track $index) {
+                <div  class="rounded-3xl bg-gradient-to-r from-[rgba(63,200,190,1)] to-[rgba(0,155,250,1)] p-[2px]">
+                    <div class="bg-white p-4 rounded-3xl flex flex-wrap gap-6 justify-around items-center">
+                        <div class="flex justify-center items-center">
+                            <div class="flex flex-col min-w-20 -translate-y-6 -translate-x-1">
+                                <img src="images/imagen-referencial.webp" alt="Protección de Equipos" class="h-16 w-16 rounded-full object-cover">
+                                <div class="flex gap-0.5 text-inelPrimary text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-inelPrimary text-sm font-bold">Jack Pacheco Noriega</p>
+                                <p class="text-foreground text-xs">Llevé el Programa de Especialización en Sistemas Eléctricos de Potencia en INEL y gracias a ello, hoy por hoy estoy trabajando en Ambit Energy - Texas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

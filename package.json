@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-v3",
+  "name": "front-inel",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portfolio-v3": "node dist/portfolio-v3/server/server.mjs"
+    "serve:ssr:front-inel": "node dist/front-inel/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "angular-svg-icon": "^18.0.2",
+    "animate.css": "^4.1.1",
     "embla-carousel-angular": "^14.2.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",

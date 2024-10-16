@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {path: '', loadComponent: () => import('./pages/layout/layout.component').then(m => m.LayoutComponent)},
-    {path: '**', redirectTo: '/', pathMatch: 'full'}
+    {path: '', loadChildren: () => import('./presentation/public/public.module').then(m => m.PublicModule)},
+    {path: '**', redirectTo: '/'}
 ];

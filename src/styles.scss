@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../node_modules/animate.css/animate.min.css";
 
 @font-face {
     font-family: 'Integral CF';
@@ -77,10 +78,11 @@
     select {
         @apply w-full rounded-md border border-border bg-background px-3 py-3 text-base text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none focus:ring-primary;
     }
+  
+}
 
-    button{ 
-        outline: none;
-    }
+button{ 
+    outline: none !important;
 }
 
 /** Scroll bar **/
@@ -127,3 +129,79 @@
 .me-image{
     mask-image: linear-gradient(black 80%, transparent);
 }
+
+.bg-gradient {
+    background: rgb(0,155,250);
+    background: linear-gradient(90deg, rgba(63,200,190,1) 0%, rgba(0,155,250,1) 100%);
+}
+
+
+
+  .spin-animation {
+      svg {
+        animation-timing-function: linear;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-name: turn_me_right_round;
+
+      }
+  }
+
+  @keyframes turn_me_right_round {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .text-animated{ 
+    animation: fade linear both 5s;
+    animation-timeline: view();
+    animation-range: 30% cover 40%;
+  }
+
+  .animated-embla {
+    animation: scale-up linear both 5s;
+    animation-timeline: view();
+    animation-range: 30% cover 40%;
+  }
+
+  .text-animated-on{ 
+    animation: fade_on linear both 5s;
+    animation-timeline: view();
+    animation-range: 30% cover 40%;
+  }
+
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade_on {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-up {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
